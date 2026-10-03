@@ -57,7 +57,7 @@ WELCOME="""
                     <tr>
                         <td align="center" style="padding: 30px 30px; color: #64748b; font-size: 12px; line-height: 1.5;">
                             <p style="margin: 0 0 10px 0;">&copy; 2026 CRYPTO AI. All rights reserved.</p>
-                            <p style="margin: 0;">Have any questions? We're here to help. Contact us at <a href="mailto:support@cryptoai.com" style="color: #3b82f6; text-decoration: underline;">support@cryptoai.com</a></p>
+                            <p style="margin: 0;">Have any questions? We're here to help. Contact us at <a href="mailto:support@ContextGPT .com" style="color: #3b82f6; text-decoration: underline;">support@ContextGPT .com</a></p>
                         </td>
                     </tr>
                 </table>

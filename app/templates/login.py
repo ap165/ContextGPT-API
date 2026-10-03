@@ -95,7 +95,7 @@ LOGIN = """
                             <p style="margin: 0 0 10px 0;">This is an automated security alert. Please do not reply to this email.</p>
                             <p style="margin: 0 0 10px 0;">&copy; 2026 CRYPTO AI. All rights reserved.</p>
                             <p style="margin: 0;">
-                                <a href="mailto:support@cryptoai.com" style="color: #3b82f6; text-decoration: underline;">Contact Support</a> | 
+                                <a href="mailto:support@ContextGPT .com" style="color: #3b82f6; text-decoration: underline;">Contact Support</a> | 
                                 <a href="{{PRIVACY_URL}}" style="color: #3b82f6; text-decoration: underline;">Privacy Policy</a>
                             </p>
                         </td>
