@@ -1,158 +1,104 @@
-# Company Policy RAG API
+# ContextGPT Backend API
 
-A Retrieval-Augmented Generation (RAG) backend built with FastAPI, LangChain, and MongoDB Atlas. This API ingests company documents (PDF, TXT, DOCX, Excel), converts them into searchable vector embeddings using a local HuggingFace model, and uses Google Gemini to answer user questions based strictly on the retrieved document context.
+The backend infrastructure for ContextGPT, an enterprise-grade internal knowledge base AI. Built with FastAPI, this service handles secure passwordless authentication (OTP + JWT), email notifications, document ingestion pipelines, and the core Retrieval-Augmented Generation (RAG) chat endpoints for querying company data.
 
-## 🚀 Tech Stack
-* **Framework:** FastAPI
-* **Orchestration:** LangChain
-* **Vector Database:** MongoDB Atlas Vector Search
-* **Embeddings:** HuggingFace (`all-MiniLM-L6-v2` / 384 dimensions)
-* **LLM:** Google Gemini (`gemini-3.5-flash-lite`)
+## ✨ Key Features
 
-## 📁 Project Structure
-```text
-├── .vscode/
-│   └── settings.json
-├── app/
-│   ├── api/
-│   │   ├── auth/
-│   │   │   ├── __init__.py
-│   │   │   ├── login.py
-│   │   │   ├── register.py
-│   │   │   ├── reset_password.py
-│   │   │   ├── send_login_otp.py
-│   │   │   ├── send_otp.py
-│   │   │   ├── send_reset_otp.py
-│   │   │   └── verify_jwt.py
-│   │   └── v1/
-│   │       └── chat.py
-│   ├── core/
-│   │   └── config.py
-│   ├── data/
-│   │   └── policies/
-│   │       ├── Employee-Handbook-for-Nonprofits-and-Small-Businesses.pdf
-│   │       ├── Employee-Handbook.pdf
-│   │       └── Leave-and-Holiday-Policy.pdf
-│   ├── scripts/
-│   │   ├── __init__.py
-│   │   ├── create_db.py
-│   │   └── ingest_data.py
-│   ├── templates/
-│   │   ├── __init__.py
-│   │   ├── login_otp.py
-│   │   ├── login.py
-│   │   ├── pass_changed.py
-│   │   ├── pass_reset_otp.py
-│   │   ├── reg_otp.py
-│   │   └── welcome.py
-│   ├── utils/
-│   │   ├── __init__.py
-│   │   ├── _jwt.py
-│   │   ├── db.py
-│   │   ├── gen_otp.py
-│   │   ├── response.py
-│   │   ├── send_email.py
-│   │   └── validators.py
-│   └── main.py
-├── .gitignore
-├── README.md
-└── requirements.txt
+*   **RAG Engine:** Processes user queries against a vector database of internal company documents to provide accurate, context-aware AI responses.
+*   **Passwordless & OTP Authentication:** Secure login, registration, and password reset flows using email-based One-Time Passwords (OTPs).
+*   **JWT Session Management:** Stateless authentication using JSON Web Tokens.
+*   **Data Ingestion Pipeline:** Automated scripts to parse, chunk, and embed internal company policies and documents into the vector database.
+*   **Custom Email Templates:** Beautiful, branded HTML email templates for user onboarding, security alerts, and OTP delivery.
+
+## 🛠️ Tech Stack
+
+*   **Framework:** FastAPI (Python)
+*   **Server:** Uvicorn
+*   **Database:** MongoDB Atlas (User data) & Vector Database (Document embeddings)
+*   **Authentication:** JWT (JSON Web Tokens) & SMTP-based OTPs
+*   **Architecture:** Modular REST API
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+Ensure you have Python 3.10+ installed.
+
+### 2. Installation
+Clone the repository and install the required dependencies:
+```bash
+# Create a virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
 
 ```
 
-## ⚙️ Prerequisites & Setup
+### 3. Environment Variables
 
-### 1. Install Dependencies
+Create a `.env` file in the root directory. You will need configuration variables for your database, JWT secret, and SMTP server:
 
-Ensure you have Python installed, activate your virtual environment, and run:
+```env
+# Database
+MONGO_URI=mongodb+srv://:@cluster.mongodb.net/ContextGPT?retryWrites=true&w=majority
+
+# Security
+JWT_SECRET_KEY=your_super_secret_key
+JWT_ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=1440
+
+# Email (SMTP)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your_email@gmail.com
+SMTP_PASS=your_app_password
+
+```
+
+### 4. Running the Server
+
+Start the FastAPI application using Uvicorn:
 
 ```bash
-pip install fastapi uvicorn pydantic python-dotenv
-pip install langchain langchain-community langchain-huggingface langchain-google-genai langchain-mongodb
-pip install pymongo pypdf docx2txt unstructured openpyxl sentence-transformers
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
 ```
 
-### 2. Environment Variables
+The API documentation (Swagger UI) will be automatically generated and available at `http://localhost:8000/docs`.
 
-Create a `.env` file in the root `backend/` directory with the following variables:
+## 📂 Architecture & File Structure
 
-```ini
-MONGO_URI="mongodb+srv://<username>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority"
-DB_NAME="ask_ai_db"
-COLLECTION_NAME="policy_vectors"
-VECTOR_INDEX_NAME="AskAI_index"
-GEMINI_API_KEY="your_google_gemini_api_key"
+* **`/app/api/auth/`**: Authentication routes. Handles sending OTPs, verifying OTPs, logging in, registering, and issuing JWTs.
+* **`/app/api/v1/chat.py`**: The core RAG chatbot endpoint. Validates the JWT, receives the user's query and 5-message conversation history, retrieves context from the vector DB, and returns the LLM response.
+* **`/app/core/config.py`**: Centralized environment variable loading and configuration management.
+* **`/app/data/policies/`**: The local directory for dropping raw company documents (PDFs, TXTs, Markdown) before ingestion.
+* **`/app/scripts/`**: CLI utilities for database management.
+* **`/app/templates/`**: HTML strings/files used by the SMTP utility to send branded ContextGPT emails.
+* **`/app/utils/`**: Helper functions for database connections, JWT encoding/decoding, OTP generation, validation logic, and email dispatching.
 
-```
+## 🧠 Data Ingestion (RAG Setup)
 
-### 3. Configure MongoDB Atlas Vector Index
+Before the chatbot can answer company-specific questions, you must ingest your documents into the vector database.
 
-Before ingesting data, you must create a Vector Search Index in your MongoDB Atlas dashboard.
-
-1. Navigate to **Atlas Search** -> **Create Index** -> **Atlas Vector Search** (JSON Editor).
-2. Select your database (`ask_ai_db`) and collection (`policy_vectors`).
-3. Name it `AskAI_index` and use this exact JSON configuration:
-
-```json
-{
-  "fields": [
-    {
-      "numDimensions": 384,
-      "path": "embedding",
-      "similarity": "cosine",
-      "type": "vector"
-    }
-  ]
-}
-
-```
-
-## 🧠 Usage
-
-### Step 1: Ingest Documents
-
-Place your source files (PDF, TXT, DOCX, XLSX) into the `app/data/policies/` folder. Run the ingestion script from the root directory to chunk the text, generate HuggingFace embeddings, and push them to MongoDB:
-
+1. Place your company documents (e.g., HR policies, technical docs) into the `/app/data/policies/` directory.
+2. Initialize the database collections:
 ```bash
-python .\app\scripts\ingest_data.py
+python -m app.scripts.create_db
 
 ```
 
-### Step 2: Start the FastAPI Server
 
-Launch the backend server using Python (which will trigger Uvicorn):
-
+3. Run the ingestion script to chunk, embed, and store the documents:
 ```bash
-python .\app\main.py
+python -m app.scripts.ingest_data
 
 ```
 
-*Note: The server may take 10–20 seconds to boot the first time as it loads the HuggingFace embedding model into memory.*
 
-### Step 3: Query the API
 
-Once running, the API is available at `http://127.0.0.1:8000`. You can test the endpoint using the built-in Swagger UI at `http://127.0.0.1:8000/docs`, or send a POST request:
+## 🔒 Authentication Flow
 
-**Endpoint:** `POST /api/v1/chat/ask`
-
-**Request Body:**
-
-```json
-{
-  "query": "What is the company policy on remote work?"
-}
-
-```
-
-**Response:**
-
-```json
-{
-  "answer": "Employees working remotely must ensure their home networks are secure. Company-issued laptops must not be used by family members or unauthorized personnel...",
-  "sources": [
-    "app/data/policies/code_of_conduct.txt"
-  ]
-}
-
-```
+1. **Request OTP:** Client calls `/api/auth/send-login-otp` with an email. Backend generates a 6-digit OTP, stores it temporarily, and emails it using templates in `/app/templates/`.
+2. **Verify & Tokenize:** Client submits the OTP to `/api/auth/login`. Backend verifies the OTP and returns a JWT.
+3. **Secure Access:** Client passes the JWT in the `Authorization: Bearer ` header to access `/api/v1/chat`. The token is validated via `/app/utils/_jwt.py`.
