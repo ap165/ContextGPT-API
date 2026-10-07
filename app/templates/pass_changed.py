@@ -4,7 +4,7 @@ PASS_CHANGED="""
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Updated - CRYPTO AI</title>
+    <title>Password Updated - ContextGPT</title>
     <style>
         /* Reset styles for email clients */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -29,7 +29,7 @@ PASS_CHANGED="""
                     <!-- Header -->
                     <tr>
                         <td align="center" style="padding: 30px 30px 20px 30px; background-color: #0f172a; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: 2px;">CRYPTO AI</h1>
+                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: 2px;">ContextGPT</h1>
                         </td>
                     </tr>
 
@@ -38,7 +38,7 @@ PASS_CHANGED="""
                         <td align="left" style="padding: 40px 30px 20px 30px; color: #333333; font-size: 16px; line-height: 1.6;">
                             <h2 style="margin: 0 0 20px 0; color: #0f172a; font-size: 20px; font-weight: 600;">Your password was updated</h2>
                             <p style="margin: 0 0 20px 0;">Hi <strong>{{USER_NAME}}</strong>,</p>
-                            <p style="margin: 0 0 20px 0;">This is a quick confirmation that the password for your CRYPTO AI account has been successfully changed.</p>
+                            <p style="margin: 0 0 20px 0;">This is a quick confirmation that the password for your ContextGPT account has been successfully changed.</p>
                         </td>
                     </tr>
 
@@ -65,7 +65,7 @@ PASS_CHANGED="""
                             <p style="margin: 0 0 20px 0;"><strong>Didn't make this change?</strong><br>
                             If you did not change your password, your account may be compromised. Please reset your password immediately or contact our support team at <a href="mailto:support@ContextGPT .com" style="color: #3b82f6; text-decoration: underline;">support@ContextGPT .com</a>.</p>
                             
-                            <p style="margin: 0;">Stay secure,<br><strong>The CRYPTO AI Security Team</strong></p>
+                            <p style="margin: 0;">Stay secure,<br><strong>The ContextGPT Security Team</strong></p>
                         </td>
                     </tr>
                 </table>
@@ -76,7 +76,7 @@ PASS_CHANGED="""
                     <tr>
                         <td align="center" style="padding: 30px 30px; color: #64748b; font-size: 12px; line-height: 1.6;">
                             <p style="margin: 0 0 10px 0;">This is an automated security alert. Please do not reply to this email.</p>
-                            <p style="margin: 0 0 10px 0;">&copy; 2026 CRYPTO AI. All rights reserved.</p>
+                            <p style="margin: 0 0 10px 0;">&copy; 2026 ContextGPT. All rights reserved.</p>
                             <p style="margin: 0;">
                                 <a href="mailto:support@ContextGPT .com" style="color: #3b82f6; text-decoration: underline;">Contact Support</a> | 
                                 <a href="{{PRIVACY_URL}}" style="color: #3b82f6; text-decoration: underline;">Privacy Policy</a>

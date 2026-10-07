@@ -4,7 +4,7 @@ LOGIN = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Login Alert - CRYPTO AI</title>
+    <title>New Login Alert - ContextGPT</title>
     <style>
         /* Reset styles */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -30,7 +30,7 @@ LOGIN = """
                     <!-- Header (Dark tech-focused background) -->
                     <tr>
                         <td align="center" style="padding: 30px 30px 20px 30px; background-color: #0f172a; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: 2px;">CRYPTO AI</h1>
+                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: 2px;">ContextGPT</h1>
                         </td>
                     </tr>
 
@@ -39,7 +39,7 @@ LOGIN = """
                         <td align="left" style="padding: 40px 30px 20px 30px; color: #333333; font-size: 16px; line-height: 1.6;">
                             <h2 style="margin: 0 0 20px 0; color: #0f172a; font-size: 20px; font-weight: 600;">New sign-in detected</h2>
                             <p style="margin: 0 0 20px 0;">Hi <strong>{{USER_NAME}}</strong>,</p>
-                            <p style="margin: 0 0 20px 0;">We noticed a new sign-in to your CRYPTO AI account from an IP Address we don't recognize. Here are the details:</p>
+                            <p style="margin: 0 0 20px 0;">We noticed a new sign-in to your ContextGPT account from an IP Address we don't recognize. Here are the details:</p>
                         </td>
                     </tr>
 
@@ -82,7 +82,7 @@ LOGIN = """
                     <!-- Sign-off -->
                     <tr>
                         <td align="left" style="padding: 0 30px 40px 30px; color: #555555; font-size: 14px; line-height: 1.6;">
-                            <p style="margin: 0;">Stay secure,<br><strong>The CRYPTO AI Team</strong></p>
+                            <p style="margin: 0;">Stay secure,<br><strong>The ContextGPT Team</strong></p>
                         </td>
                     </tr>
                 </table>
@@ -93,9 +93,9 @@ LOGIN = """
                     <tr>
                         <td align="center" style="padding: 30px 30px; color: #64748b; font-size: 12px; line-height: 1.6;">
                             <p style="margin: 0 0 10px 0;">This is an automated security alert. Please do not reply to this email.</p>
-                            <p style="margin: 0 0 10px 0;">&copy; 2026 CRYPTO AI. All rights reserved.</p>
+                            <p style="margin: 0 0 10px 0;">&copy; 2026 ContextGPT. All rights reserved.</p>
                             <p style="margin: 0;">
-                                <a href="mailto:support@ContextGPT .com" style="color: #3b82f6; text-decoration: underline;">Contact Support</a> | 
+                                <a href="mailto:support@ContextGPT.com" style="color: #3b82f6; text-decoration: underline;">Contact Support</a> | 
                                 <a href="{{PRIVACY_URL}}" style="color: #3b82f6; text-decoration: underline;">Privacy Policy</a>
                             </p>
                         </td>

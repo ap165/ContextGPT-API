@@ -4,7 +4,7 @@ WELCOME="""
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to CRYPTO AI</title>
+    <title>Welcome to ContextGPT</title>
     <style>
         /* Reset styles for email clients */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -29,7 +29,7 @@ WELCOME="""
                     <!-- Header -->
                     <tr>
                         <td align="center" style="padding: 30px 30px 20px 30px; background-color: #0f172a; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: 2px;">CRYPTO AI</h1>
+                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: 2px;">ContextGPT</h1>
                         </td>
                     </tr>
 
@@ -38,7 +38,7 @@ WELCOME="""
                         <td align="left" style="padding: 40px 30px 10px 30px; color: #333333; font-size: 16px; line-height: 1.6;">
                             <h2 style="margin: 0 0 20px 0; color: #0f172a; font-size: 22px;">We're thrilled you're here! 🚀</h2>
                             <p style="margin: 0 0 20px 0;">Hi <strong>{{USER_NAME}}</strong>,</p>
-                            <p style="margin: 0 0 20px 0;">The markets move fast. That's exactly why we built CRYPTO AI—your intelligent companion designed to help you navigate the complex world of cryptocurrency with cutting-edge insights.</p>
+                            <p style="margin: 0 0 20px 0;">The markets move fast. That's exactly why we built ContextGPT—your intelligent companion designed to help you navigate the complex world of cryptocurrency with cutting-edge insights.</p>
                             <p style="margin: 0 0 20px 0;">Whether you are looking to automate your strategies, analyze real-time market trends, or simply stay ahead of the curve, you are exactly where you need to be.</p>
                         </td>
                     </tr>
@@ -46,7 +46,7 @@ WELCOME="""
                     <!-- Sign Off -->
                     <tr>
                         <td align="left" style="padding: 0 30px 40px 30px; color: #555555; font-size: 14px; line-height: 1.6;">
-                            <p style="margin: 0;">Stay ahead,<br><strong>The CRYPTO AI Team</strong></p>
+                            <p style="margin: 0;">Stay ahead,<br><strong>The ContextGPT Team</strong></p>
                         </td>
                     </tr>
                 </table>
@@ -56,7 +56,7 @@ WELCOME="""
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                     <tr>
                         <td align="center" style="padding: 30px 30px; color: #64748b; font-size: 12px; line-height: 1.5;">
-                            <p style="margin: 0 0 10px 0;">&copy; 2026 CRYPTO AI. All rights reserved.</p>
+                            <p style="margin: 0 0 10px 0;">&copy; 2026 ContextGPT. All rights reserved.</p>
                             <p style="margin: 0;">Have any questions? We're here to help. Contact us at <a href="mailto:support@ContextGPT .com" style="color: #3b82f6; text-decoration: underline;">support@ContextGPT .com</a></p>
                         </td>
                     </tr>

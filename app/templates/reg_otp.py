@@ -4,7 +4,7 @@ REG_OTP="""
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify Your CRYPTO AI Account</title>
+    <title>Verify Your ContextGPT Account</title>
     <style>
         /* Reset styles for email clients */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -29,7 +29,7 @@ REG_OTP="""
                     <!-- Header -->
                     <tr>
                         <td align="center" style="padding: 30px 30px 20px 30px; background-color: #0f172a; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: 2px;">CRYPTO AI</h1>
+                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: 2px;">ContextGPT</h1>
                         </td>
                     </tr>
 
@@ -38,7 +38,7 @@ REG_OTP="""
                         <td align="left" style="padding: 40px 30px 20px 30px; color: #333333; font-size: 16px; line-height: 1.6;">
                             <h2 style="margin: 0 0 20px 0; color: #0f172a; font-size: 20px; font-weight: 600;">Verify your email address</h2>
                             <p style="margin: 0 0 20px 0;">Hi <strong>{{USER_NAME}}</strong>,</p>
-                            <p style="margin: 0 0 20px 0;">Welcome to CRYPTO AI! Use the following One-Time Password (OTP) to verify your email address and complete your registration. This code is valid for the next <strong>10 minutes</strong>.</p>
+                            <p style="margin: 0 0 20px 0;">Welcome to ContextGPT! Use the following One-Time Password (OTP) to verify your email address and complete your registration. This code is valid for the next <strong>10 minutes</strong>.</p>
                         </td>
                     </tr>
 
@@ -59,7 +59,7 @@ REG_OTP="""
                     <tr>
                         <td align="left" style="padding: 0 30px 40px 30px; color: #555555; font-size: 14px; line-height: 1.6;">
                             <p style="margin: 0 0 20px 0;">For your security, please do not share this code with anyone. If you did not attempt to create an account, you can safely ignore this email.</p>
-                            <p style="margin: 0;">Welcome aboard,<br><strong>The CRYPTO AI Team</strong></p>
+                            <p style="margin: 0;">Welcome aboard,<br><strong>The ContextGPT Team</strong></p>
                         </td>
                     </tr>
                 </table>
@@ -69,7 +69,7 @@ REG_OTP="""
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                     <tr>
                         <td align="center" style="padding: 30px 30px; color: #64748b; font-size: 12px; line-height: 1.6;">
-                            <p style="margin: 0 0 10px 0;">&copy; 2026 CRYPTO AI. All rights reserved.</p>
+                            <p style="margin: 0 0 10px 0;">&copy; 2026 ContextGPT. All rights reserved.</p>
                             <p style="margin: 0;">Need help? Contact us at <a href="mailto:support@ContextGPT .com" style="color: #3b82f6; text-decoration: underline;">support@ContextGPT .com</a></p>
                         </td>
                     </tr>
